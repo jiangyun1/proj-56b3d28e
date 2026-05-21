@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ideabobo.service.CarMapper">
+  <resultMap id="BaseResultMap" type="com.ideabobo.model.Car">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="chepai" jdbcType="VARCHAR" property="chepai" />
+    <result column="xinghao" jdbcType="VARCHAR" property="xinghao" />
+    <result column="zaizhong" jdbcType="VARCHAR" property="zaizhong" />
+    <result column="statecn" jdbcType="VARCHAR" property="statecn" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="carinfo" jdbcType="VARCHAR" property="carinfo" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, chepai, xinghao, zaizhong, statecn, username, uid, carinfo
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wct_car
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from wct_car
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ideabobo.model.Car">
+    insert into wct_car (id, chepai, xinghao, 
+      zaizhong, statecn, username, 
+      uid, carinfo)
+    values (#{id,jdbcType=INTEGER}, #{chepai,jdbcType=VARCHAR}, #{xinghao,jdbcType=VARCHAR}, 
+      #{zaizhong,jdbcType=VARCHAR}, #{statecn,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{uid,jdbcType=INTEGER}, #{carinfo,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ideabobo.model.Car">
+    insert into wct_car
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="chepai != null">
+        chepai,
+      </if>
+      <if test="xinghao != null">
+        xinghao,
+      </if>
+      <if test="zaizhong != null">
+        zaizhong,
+      </if>
+      <if test="statecn != null">
+        statecn,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="carinfo != null">
+        carinfo,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="chepai != null">
+        #{chepai,jdbcType=VARCHAR},
+      </if>
+      <if test="xinghao != null">
+        #{xinghao,jdbcType=VARCHAR},
+      </if>
+      <if test="zaizhong != null">
+        #{zaizhong,jdbcType=VARCHAR},
+      </if>
+      <if test="statecn != null">
+        #{statecn,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="carinfo != null">
+        #{carinfo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ideabobo.model.Car">
+    update wct_car
+    <set>
+      <if test="chepai != null">
+        chepai = #{chepai,jdbcType=VARCHAR},
+      </if>
+      <if test="xinghao != null">
+        xinghao = #{xinghao,jdbcType=VARCHAR},
+      </if>
+      <if test="zaizhong != null">
+        zaizhong = #{zaizhong,jdbcType=VARCHAR},
+      </if>
+      <if test="statecn != null">
+        statecn = #{statecn,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="carinfo != null">
+        carinfo = #{carinfo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ideabobo.model.Car">
+    update wct_car
+    set chepai = #{chepai,jdbcType=VARCHAR},
+      xinghao = #{xinghao,jdbcType=VARCHAR},
+      zaizhong = #{zaizhong,jdbcType=VARCHAR},
+      statecn = #{statecn,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      uid = #{uid,jdbcType=INTEGER},
+      carinfo = #{carinfo,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

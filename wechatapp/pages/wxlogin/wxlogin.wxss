@@ -1,0 +1,17 @@
+/* pages/wxlogin/wxlogin.wxss */
+
+.touxiang{
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 20px;
+}
+
+.username{
+  text-align: center;
+
+}
+
+.p90ctn{
+  width: 80%;
+  margin-left: 10%;
+}

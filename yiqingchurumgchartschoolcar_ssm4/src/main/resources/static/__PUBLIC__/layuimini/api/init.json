@@ -1,0 +1,77 @@
+{
+  "homeInfo": {
+    "title": "用户管理",
+    "href": "user.html"
+  },
+  "logoInfo": {
+    "title": "后台管理系统",
+    "image": "./__PUBLIC__/images/login/logo.png",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "系统管理",
+      "icon": "fa fa-address-book",
+      "href": "",
+      "target": "_self",
+      "child": [
+
+        {
+          "title": "进校申请",
+          "href": "yuyue.html",
+          "icon": "fa fa-gears",
+          "target": "_self"
+        },
+
+        {
+          "title": "进校记录",
+          "href": "record.html",
+          "icon": "fa fa-gears",
+          "target": "_self"
+        },
+        {
+          "title": "图表统计",
+          "href": "recordtongji.html",
+          "icon": "fa fa-gears",
+          "target": "_self"
+        },
+        {
+          "title": "管理审核人员管理",
+          "href": "user.html",
+          "icon": "fa fa-gears",
+          "target": "_self"
+        },
+        {
+          "title": "校内车辆管理",
+          "href": "car.html",
+          "icon": "fa fa-gears",
+          "target": "_self"
+        },
+        {
+          "title": "通知公告管理",
+          "href": "notice.html",
+          "icon": "fa fa-gears",
+          "target": "_self"
+        },
+        {
+          "title": "交流讨论管理",
+          "href": "postsreplay.html",
+          "icon": "fa fa-gears",
+          "target": "_self"
+        },
+        {
+          "title": "用户管理",
+          "href": "student.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
+        {
+          "title": "健康上报管理",
+          "href": "shangbao.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        }
+      ]
+    }
+  ]
+}

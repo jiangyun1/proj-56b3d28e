@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ideabobo.service.YuyueMapper">
+  <resultMap id="BaseResultMap" type="com.ideabobo.model.Yuyue">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="ndate" jdbcType="VARCHAR" property="ndate" />
+    <result column="statecn" jdbcType="VARCHAR" property="statecn" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="img" jdbcType="VARCHAR" property="img" />
+    <result column="btype" jdbcType="INTEGER" property="btype" />
+    <result column="fenlei" jdbcType="VARCHAR" property="fenlei" />
+    <result column="mudi" jdbcType="VARCHAR" property="mudi" />
+    <result column="chepai" jdbcType="VARCHAR" property="chepai" />
+    <result column="hsbg" jdbcType="VARCHAR" property="hsbg" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, username, ndate, statecn, tel, note, uid, img, btype, fenlei, mudi, chepai, hsbg
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wct_yuyue
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from wct_yuyue
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ideabobo.model.Yuyue">
+    insert into wct_yuyue (id, username, ndate, 
+      statecn, tel, note, 
+      uid, img, btype, fenlei, 
+      mudi, chepai, hsbg)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{ndate,jdbcType=VARCHAR}, 
+      #{statecn,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, 
+      #{uid,jdbcType=INTEGER}, #{img,jdbcType=VARCHAR}, #{btype,jdbcType=INTEGER}, #{fenlei,jdbcType=VARCHAR}, 
+      #{mudi,jdbcType=VARCHAR}, #{chepai,jdbcType=VARCHAR}, #{hsbg,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ideabobo.model.Yuyue">
+    insert into wct_yuyue
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="ndate != null">
+        ndate,
+      </if>
+      <if test="statecn != null">
+        statecn,
+      </if>
+      <if test="tel != null">
+        tel,
+      </if>
+      <if test="note != null">
+        note,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="img != null">
+        img,
+      </if>
+      <if test="btype != null">
+        btype,
+      </if>
+      <if test="fenlei != null">
+        fenlei,
+      </if>
+      <if test="mudi != null">
+        mudi,
+      </if>
+      <if test="chepai != null">
+        chepai,
+      </if>
+      <if test="hsbg != null">
+        hsbg,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="ndate != null">
+        #{ndate,jdbcType=VARCHAR},
+      </if>
+      <if test="statecn != null">
+        #{statecn,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="img != null">
+        #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="btype != null">
+        #{btype,jdbcType=INTEGER},
+      </if>
+      <if test="fenlei != null">
+        #{fenlei,jdbcType=VARCHAR},
+      </if>
+      <if test="mudi != null">
+        #{mudi,jdbcType=VARCHAR},
+      </if>
+      <if test="chepai != null">
+        #{chepai,jdbcType=VARCHAR},
+      </if>
+      <if test="hsbg != null">
+        #{hsbg,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ideabobo.model.Yuyue">
+    update wct_yuyue
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="ndate != null">
+        ndate = #{ndate,jdbcType=VARCHAR},
+      </if>
+      <if test="statecn != null">
+        statecn = #{statecn,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="img != null">
+        img = #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="btype != null">
+        btype = #{btype,jdbcType=INTEGER},
+      </if>
+      <if test="fenlei != null">
+        fenlei = #{fenlei,jdbcType=VARCHAR},
+      </if>
+      <if test="mudi != null">
+        mudi = #{mudi,jdbcType=VARCHAR},
+      </if>
+      <if test="chepai != null">
+        chepai = #{chepai,jdbcType=VARCHAR},
+      </if>
+      <if test="hsbg != null">
+        hsbg = #{hsbg,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ideabobo.model.Yuyue">
+    update wct_yuyue
+    set username = #{username,jdbcType=VARCHAR},
+      ndate = #{ndate,jdbcType=VARCHAR},
+      statecn = #{statecn,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      note = #{note,jdbcType=VARCHAR},
+      uid = #{uid,jdbcType=INTEGER},
+      img = #{img,jdbcType=VARCHAR},
+      btype = #{btype,jdbcType=INTEGER},
+      fenlei = #{fenlei,jdbcType=VARCHAR},
+      mudi = #{mudi,jdbcType=VARCHAR},
+      chepai = #{chepai,jdbcType=VARCHAR},
+      hsbg = #{hsbg,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

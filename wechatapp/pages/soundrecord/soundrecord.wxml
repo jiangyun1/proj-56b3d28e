@@ -1,0 +1,2 @@
+<button bindtouchstart="startRecord" bindtouchend="stopRecord">{{btntext}}</button>
+

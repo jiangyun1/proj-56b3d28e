@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ideabobo.service.ShangbaoMapper">
+  <resultMap id="BaseResultMap" type="com.ideabobo.model.Shangbao">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="tiwen" jdbcType="VARCHAR" property="tiwen" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="ndate" jdbcType="VARCHAR" property="ndate" />
+    <result column="xingcheng" jdbcType="VARCHAR" property="xingcheng" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="ymjz" jdbcType="VARCHAR" property="ymjz" />
+    <result column="jcky" jdbcType="VARCHAR" property="jcky" />
+    <result column="jkzk" jdbcType="VARCHAR" property="jkzk" />
+    <result column="fname" jdbcType="VARCHAR" property="fname" />
+    <result column="idcard" jdbcType="VARCHAR" property="idcard" />
+    <result column="menpai" jdbcType="VARCHAR" property="menpai" />
+    <result column="lyd" jdbcType="VARCHAR" property="lyd" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="gaowen" jdbcType="INTEGER" property="gaowen" />
+    <result column="leibie" jdbcType="VARCHAR" property="leibie" />
+    <result column="jkm" jdbcType="VARCHAR" property="jkm" />
+    <result column="xcm" jdbcType="VARCHAR" property="xcm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, tiwen, note, ndate, xingcheng, username, uid, ymjz, jcky, jkzk, fname, idcard, 
+    menpai, lyd, address, gaowen, leibie, jkm, xcm
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wct_shangbao
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from wct_shangbao
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ideabobo.model.Shangbao">
+    insert into wct_shangbao (id, tiwen, note, 
+      ndate, xingcheng, username, 
+      uid, ymjz, jcky, jkzk, 
+      fname, idcard, menpai, 
+      lyd, address, gaowen, 
+      leibie, jkm, xcm)
+    values (#{id,jdbcType=INTEGER}, #{tiwen,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, 
+      #{ndate,jdbcType=VARCHAR}, #{xingcheng,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{uid,jdbcType=INTEGER}, #{ymjz,jdbcType=VARCHAR}, #{jcky,jdbcType=VARCHAR}, #{jkzk,jdbcType=VARCHAR}, 
+      #{fname,jdbcType=VARCHAR}, #{idcard,jdbcType=VARCHAR}, #{menpai,jdbcType=VARCHAR}, 
+      #{lyd,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{gaowen,jdbcType=INTEGER}, 
+      #{leibie,jdbcType=VARCHAR}, #{jkm,jdbcType=VARCHAR}, #{xcm,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ideabobo.model.Shangbao">
+    insert into wct_shangbao
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="tiwen != null">
+        tiwen,
+      </if>
+      <if test="note != null">
+        note,
+      </if>
+      <if test="ndate != null">
+        ndate,
+      </if>
+      <if test="xingcheng != null">
+        xingcheng,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="ymjz != null">
+        ymjz,
+      </if>
+      <if test="jcky != null">
+        jcky,
+      </if>
+      <if test="jkzk != null">
+        jkzk,
+      </if>
+      <if test="fname != null">
+        fname,
+      </if>
+      <if test="idcard != null">
+        idcard,
+      </if>
+      <if test="menpai != null">
+        menpai,
+      </if>
+      <if test="lyd != null">
+        lyd,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="gaowen != null">
+        gaowen,
+      </if>
+      <if test="leibie != null">
+        leibie,
+      </if>
+      <if test="jkm != null">
+        jkm,
+      </if>
+      <if test="xcm != null">
+        xcm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tiwen != null">
+        #{tiwen,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="ndate != null">
+        #{ndate,jdbcType=VARCHAR},
+      </if>
+      <if test="xingcheng != null">
+        #{xingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="ymjz != null">
+        #{ymjz,jdbcType=VARCHAR},
+      </if>
+      <if test="jcky != null">
+        #{jcky,jdbcType=VARCHAR},
+      </if>
+      <if test="jkzk != null">
+        #{jkzk,jdbcType=VARCHAR},
+      </if>
+      <if test="fname != null">
+        #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null">
+        #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="menpai != null">
+        #{menpai,jdbcType=VARCHAR},
+      </if>
+      <if test="lyd != null">
+        #{lyd,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="gaowen != null">
+        #{gaowen,jdbcType=INTEGER},
+      </if>
+      <if test="leibie != null">
+        #{leibie,jdbcType=VARCHAR},
+      </if>
+      <if test="jkm != null">
+        #{jkm,jdbcType=VARCHAR},
+      </if>
+      <if test="xcm != null">
+        #{xcm,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ideabobo.model.Shangbao">
+    update wct_shangbao
+    <set>
+      <if test="tiwen != null">
+        tiwen = #{tiwen,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="ndate != null">
+        ndate = #{ndate,jdbcType=VARCHAR},
+      </if>
+      <if test="xingcheng != null">
+        xingcheng = #{xingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="ymjz != null">
+        ymjz = #{ymjz,jdbcType=VARCHAR},
+      </if>
+      <if test="jcky != null">
+        jcky = #{jcky,jdbcType=VARCHAR},
+      </if>
+      <if test="jkzk != null">
+        jkzk = #{jkzk,jdbcType=VARCHAR},
+      </if>
+      <if test="fname != null">
+        fname = #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null">
+        idcard = #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="menpai != null">
+        menpai = #{menpai,jdbcType=VARCHAR},
+      </if>
+      <if test="lyd != null">
+        lyd = #{lyd,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="gaowen != null">
+        gaowen = #{gaowen,jdbcType=INTEGER},
+      </if>
+      <if test="leibie != null">
+        leibie = #{leibie,jdbcType=VARCHAR},
+      </if>
+      <if test="jkm != null">
+        jkm = #{jkm,jdbcType=VARCHAR},
+      </if>
+      <if test="xcm != null">
+        xcm = #{xcm,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ideabobo.model.Shangbao">
+    update wct_shangbao
+    set tiwen = #{tiwen,jdbcType=VARCHAR},
+      note = #{note,jdbcType=VARCHAR},
+      ndate = #{ndate,jdbcType=VARCHAR},
+      xingcheng = #{xingcheng,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      uid = #{uid,jdbcType=INTEGER},
+      ymjz = #{ymjz,jdbcType=VARCHAR},
+      jcky = #{jcky,jdbcType=VARCHAR},
+      jkzk = #{jkzk,jdbcType=VARCHAR},
+      fname = #{fname,jdbcType=VARCHAR},
+      idcard = #{idcard,jdbcType=VARCHAR},
+      menpai = #{menpai,jdbcType=VARCHAR},
+      lyd = #{lyd,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      gaowen = #{gaowen,jdbcType=INTEGER},
+      leibie = #{leibie,jdbcType=VARCHAR},
+      jkm = #{jkm,jdbcType=VARCHAR},
+      xcm = #{xcm,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

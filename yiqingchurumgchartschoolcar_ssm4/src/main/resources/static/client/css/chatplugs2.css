@@ -1,0 +1,123 @@
+
+
+.chatdiv{
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    left: 0;
+    top: 60px;
+    overflow: hidden;
+}
+.chatul{
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+
+.chattouxiang{
+    width: 60px;
+}
+
+.citemfrom{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+
+.citemfrom .chattouxiang{
+    margin-right: 20px;
+}
+
+.citemfrom .chatcontent{
+    margin-right: 20px;
+    margin-left:20px;
+}
+
+.citemto{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+.citemto .chatcontent{
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.citemto .chattouxiang{
+    margin-left: 20px;
+}
+
+.chatcontent{
+    width: 200px;
+}
+.chattime{
+    text-align: center;
+    color: #999;
+    height: 40px;
+    line-height: 40px;
+}
+.chattxtcontent{
+    background-color: #4fb8ea;
+    color: #fff;
+    padding: 10px 20px 10px 20px ;
+    border-radius: 5px;
+    width: auto !important;
+}
+
+
+.chatfooter{
+    background-color: #efefef;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px #ddd solid;
+    z-index: 999;
+}
+
+.chatinputarea{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.chattextarea{
+    flex: 10;
+    height: 40px;
+    line-height: 40px;
+    border: 1px #efefef solid;
+}
+.sendbtn{
+    flex: 2;
+    text-align: center;
+    background-color: #4fb8ea;
+    color: #fff;
+    height: 36px;
+    line-height: 36px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.chatattachbtn{
+    width: 36px;
+    text-align: center;
+    color: #fff;
+    height: 36px;
+    line-height: 36px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 18px;
+    background-image: url("../images/icons/jia2.png");
+    background-size: 100% 100%;
+}
+
+.chatselectfilectn{
+    display: none;
+}
+
